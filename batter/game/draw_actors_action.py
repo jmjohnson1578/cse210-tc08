@@ -8,13 +8,6 @@ class DrawActorsAction:
         self.output_service = output_service
         self.cast = cast
         
-
-        
-
-        
-        
-
-
     def execute(self,action):
         self.output_service.clear_screen()
         for group in self.cast.values():

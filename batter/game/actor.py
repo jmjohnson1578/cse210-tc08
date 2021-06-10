@@ -15,13 +15,17 @@ class Actor:
         _velocity (Point): The actor's speed and direction.
     """
 
-    def __init__(self):
+    def __init__(self,score = None,lives = None):
         """The class constructor."""
         self._description = ""
         self._text = ""
         self._tag = ""
+        self._color = 7
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+        #For marquee values
+        self.score = score
+        self.lives = lives
 
     def get_description(self):
         """Gets the artifact's description.
@@ -96,3 +100,23 @@ class Actor:
             position (Point): The given velocity.
         """
         self._velocity = velocity
+
+    def update_score(self,amount):
+        self.score += amount
+        self.set_text(f"Score: {self.score}")
+        
+    def get_score(self):
+        return self.score
+    
+    def update_lives(self,amount):
+        self.lives += amount
+        self.set_text(f"Lives: {self.lives}")
+        
+    def get_lives(self):
+        return self.lives
+
+    def get_color(self):
+        return self._color
+    
+    def set_color(self,color):
+        self._color = color

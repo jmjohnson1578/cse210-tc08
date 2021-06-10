@@ -1,4 +1,5 @@
 from game import constants
+import game
 from game.action import Action
 
 class ControlActorsAction(Action):
@@ -12,13 +13,14 @@ class ControlActorsAction(Action):
         _input_service (InputService): An instance of InputService.
     """
 
-    def __init__(self, input_service):
+    def __init__(self, input_service,game_state):
         """The class constructor.
         
         Args:
             input_service (InputService): An instance of InputService.
         """
         self._input_service = input_service
+        self.game_state = game_state
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -27,5 +29,8 @@ class ControlActorsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         direction = self._input_service.get_direction()
-        robot = cast["robot"][0] # there's only one in the cast
-        robot.set_velocity(direction)        
+        paddle = cast["paddle"][0] # there's only one in the cast
+        ball = cast["ball"][0]
+        paddle.set_velocity(direction)
+        if not self.game_state.get_game_state():
+            ball.set_velocity(direction)              

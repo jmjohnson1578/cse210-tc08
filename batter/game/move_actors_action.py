@@ -19,6 +19,8 @@ class MoveActorsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
+
+    
         for group in cast.values():
             for actor in group:
                 if not actor.get_velocity().is_zero():

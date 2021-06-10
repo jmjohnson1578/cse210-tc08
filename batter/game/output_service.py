@@ -19,7 +19,7 @@ class OutputService:
             screen (Screen): An Asciimatics Screen.
         """
         self._screen = screen
-        
+         
     def clear_screen(self):
         """Clears the Asciimatics buffer for the next rendering.""" 
         self._screen.clear_buffer(7, 0, 0)
@@ -36,7 +36,8 @@ class OutputService:
         position = actor.get_position()
         x = position.get_x()
         y = position.get_y()
-        self._screen.print_at(text, x, y, 7) # WHITE
+        color = actor.get_color()
+        self._screen.print_at(text, x, y, color) # WHITE
 
     def draw_actors(self, actors):
         """Renders the given list of actors on the screen.
@@ -47,8 +48,6 @@ class OutputService:
         for actor in actors:
             self.draw_actor(actors.get(actor)[0])
             
-            
-            #self.draw_actor(actor) Original line
     
     def flush_buffer(self):
         """Renders the screen.""" 
