@@ -1,6 +1,15 @@
 from game.point import Point
 import random
 class Game_State:
+    
+    """A class to handle the current state of the game. 
+    Specifically when the user loses a life and the game is paused momentarily
+    
+    Responibility: Information Holder
+
+    
+    """
+
     def __init__(self,cast):
         self._current_state = True
         self.cast = cast
