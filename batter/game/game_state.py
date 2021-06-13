@@ -6,7 +6,9 @@ class Game_State:
     Specifically when the user loses a life and the game is paused momentarily
     
     Responibility: Information Holder
-
+    
+    Attributes:
+        cast (dictionary): The game actors {key: name, value: object}
     
     """
 

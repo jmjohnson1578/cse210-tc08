@@ -8,10 +8,14 @@ from asciimatics.event import KeyboardEvent
 
 
 class HandleCollisionsAction(Action):
-    """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
+    """A code template for handling collisions. The responsibility of this 
+    class of objects is to update the game state when actors collide.
     
     Stereotype:
         Controller
+    
+    Attributes:
+        game_state (Game_State): an instance of the game_state object
     """
     def __init__(self,game_state):
         self.game_state = game_state

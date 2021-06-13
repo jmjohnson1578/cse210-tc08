@@ -11,6 +11,7 @@ class MoveActorsAction(Action):
 
     Attributes:
         _input_service (InputService): An instance of InputService.
+        game_state (Game_State): an instance of the game_state object
     """
 
     def execute(self, cast):

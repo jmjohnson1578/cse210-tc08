@@ -11,6 +11,7 @@ class ControlActorsAction(Action):
 
     Attributes:
         _input_service (InputService): An instance of InputService.
+        game_state (Game_State): an instance of the game_state object
     """
 
     def __init__(self, input_service,game_state):
